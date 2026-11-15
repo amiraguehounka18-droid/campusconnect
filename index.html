@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CampusConnect, la communauté étudiante pour découvrir événements, ressources et opportunités.">
+  <title>CampusConnect — Ta communauté, tes opportunités</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-frame">
+    <aside class="sidebar">
+      <a class="brand" href="#top"><span class="brand-icon">C</span><span>Campus<span>Connect</span></span></a>
+      <nav aria-label="Navigation principale">
+        <p class="nav-label">ESPACE ÉTUDIANT</p>
+        <a class="nav-item active" href="#home">⌂ <span>Accueil</span></a>
+        <a class="nav-item" href="#events">◷ <span>Événements</span><b id="eventCount">6</b></a>
+        <a class="nav-item" href="#resources">▧ <span>Ressources</span></a>
+        <a class="nav-item" href="#community">◎ <span>Communauté</span></a>
+      </nav>
+      <div class="sidebar-card"><span class="spark">✦</span><strong>Ton prochain chapitre commence ici.</strong><p>Découvre les activités qui font avancer ta communauté.</p><a href="#events">Explorer →</a></div>
+      <div class="profile-mini"><span class="profile-avatar">AH</span><div><strong>Amirague H.</strong><small>Étudiant · Informatique</small></div><button id="themeToggle" aria-label="Changer de thème">◐</button></div>
+    </aside>
+    <main class="content" id="top">
+      <header class="topbar"><div class="breadcrumb">CAMPUSCONNECT <span>/</span> ESPACE PUBLIC</div><div class="top-actions"><button class="search-trigger" id="focusSearch">⌕ <span>Rechercher</span><kbd>⌘ K</kbd></button><button class="notification" aria-label="Notifications">♢<i></i></button><button class="avatar">AH</button></div></header>
+      <section class="hero" id="home"><div class="hero-copy"><p class="kicker">MARDI 17 NOVEMBRE · 2026</p><h1>Apprendre ensemble.<br><em>Avancer plus loin.</em></h1><p class="hero-text">Les événements, ressources et personnes qui rendent ton campus plus vivant — réunis au même endroit.</p><div class="hero-actions"><a class="button primary" href="#events">Découvrir les événements <span>↗</span></a><a class="button ghost" href="#resources">Voir les ressources</a></div></div><div class="hero-art"><div class="art-circle circle-one"></div><div class="art-circle circle-two"></div><div class="art-card"><span class="art-top">COMMUNAUTÉ / 01</span><strong>Build<br>together.</strong><div class="art-bottom"><span>Campuses connected</span><span>✦</span></div></div><span class="art-label label-one">ÉCHANGE</span><span class="art-label label-two">CRÉATION</span></div></section>
+      <section class="section" id="events"><div class="section-top"><div><p class="kicker">À NE PAS MANQUER</p><h2>Les prochains rendez-vous</h2></div><a class="see-all" href="#events">Voir tout <span>↗</span></a></div><div class="filter-row"><div class="chips" id="eventFilters"><button class="chip active" data-filter="all">Tous</button><button class="chip" data-filter="atelier">Ateliers</button><button class="chip" data-filter="rencontre">Rencontres</button><button class="chip" data-filter="carriere">Carrière</button></div><div class="search-box"><span>⌕</span><input id="eventSearch" type="search" placeholder="Rechercher un événement" aria-label="Rechercher un événement"></div></div><div class="event-grid" id="eventGrid"></div><div class="empty" id="emptyEvents" hidden><strong>Aucun événement trouvé.</strong><span>Essaie une autre recherche ou catégorie.</span></div></section>
+      <section class="section resources-section" id="resources"><div class="section-top"><div><p class="kicker">POUR TON PARCOURS</p><h2>Ressources utiles</h2></div><a class="see-all" href="#resources">Bibliothèque <span>↗</span></a></div><div class="resources-grid"><article class="resource-card green"><span class="resource-icon">↗</span><p>GUIDE</p><h3>Construire son premier portfolio</h3><span class="resource-meta">12 min · Développement web</span></article><article class="resource-card yellow"><span class="resource-icon">✎</span><p>FICHE PRATIQUE</p><h3>Réussir sa présentation de projet</h3><span class="resource-meta">8 min · Carrière</span></article><article class="resource-card purple"><span class="resource-icon">◎</span><p>COMMUNAUTÉ</p><h3>Les clubs étudiants à rejoindre</h3><span class="resource-meta">18 clubs actifs</span></article></div></section>
+      <section class="section community-section" id="community"><div class="community-panel"><div><p class="kicker">LA COMMUNAUTÉ EN ACTION</p><h2>Chaque rencontre peut ouvrir une porte.</h2><p>CampusConnect rassemble les initiatives qui font bouger les étudiants : clubs, projets, ateliers et opportunités.</p></div><div class="community-stats"><strong>24</strong><span>événements ce mois</span><strong>08</strong><span>clubs actifs</span><strong>312</strong><span>étudiants connectés</span></div></div></section>
+      <footer><span>CampusConnect · Projet portfolio d’Amirague Hounka</span><span>Version MVP · Données de démonstration</span></footer>
+    </main>
+  </div>
+  <dialog id="eventDialog"><form method="dialog" id="eventForm"><div class="dialog-head"><div><p class="kicker">PARTAGER AVEC LE CAMPUS</p><h2>Créer un événement</h2></div><button class="close" value="cancel">×</button></div><label>Titre<input id="eventTitle" required placeholder="Ex. Rencontre des développeurs"></label><div class="two-cols"><label>Catégorie<select id="eventType"><option value="atelier">Atelier</option><option value="rencontre">Rencontre</option><option value="carriere">Carrière</option></select></label><label>Date<input id="eventDate" required type="date"></label></div><label>Lieu<input id="eventPlace" required placeholder="Ex. Salle B12 ou en ligne"></label><label>Description<textarea id="eventDescription" rows="3" required placeholder="Décris l'événement en quelques mots..."></textarea></label><div class="dialog-actions"><button class="button ghost" value="cancel">Annuler</button><button class="button primary" id="saveEvent">Publier l'événement</button></div></form></dialog>
+  <script src="script.js"></script>
+</body>
+</html>

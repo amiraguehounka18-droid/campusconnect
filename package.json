@@ -1,0 +1,1 @@
+{"name":"campusconnect","version":"1.0.0","private":true,"description":"MVP frontend de communauté étudiante","scripts":{"start":"node server.js"}}
